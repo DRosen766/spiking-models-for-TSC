@@ -102,7 +102,7 @@ class DataPrepUtils(DRC):
       assert num_samples == train_y.shape[0]
       train_y, test_y = self.make_dataset_binary_classification(train_y, test_y)
       assert num_samples == train_y.shape[0]
-      train_y = np.eye(self._num_clss)[train_y.astype(np.int)-1]
-      test_y = np.eye(self._num_clss)[test_y.astype(np.int)-1]
+      train_y = np.eye(self._num_clss)[train_y.astype(int)-1]
+      test_y = np.eye(self._num_clss)[test_y.astype(int)-1]
 
     return train_x, train_y, test_x, test_y

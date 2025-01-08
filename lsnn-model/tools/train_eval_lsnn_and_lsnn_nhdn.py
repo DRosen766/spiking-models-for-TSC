@@ -21,7 +21,7 @@ def run_net(rtc, otp_dir):
   pte = PTTrainEvalModel(args.dataset, rtc)
   log.INFO("Starting the PyTorch training...")
   loss_history = pte.train_model(args.epochs, otp_dir)
-  #pickle.dump(loss_history, open(otp_dir + "/training_loss_history.p", "wb"))
+  # pickle.dump(loss_history, open(otp_dir + "/training_loss_history.p", "wb"))
   log.INFO("Training done, now finally evaluating on the entire test set...")
   acc, all_outputs = pte.evaluate_model(
       num_samples=EXC.NUM_TEST_SAMPLES[args.dataset], ldn_path=otp_dir,
